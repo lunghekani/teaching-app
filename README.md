@@ -12,3 +12,40 @@
 // The method should take as input the title of the book and the number of copies the user wants to check out. 
 //It should update the database to reflect the fact that the specified number of copies are no longer available. 
 //If the book is not available, the method should throw an exception.
+
+
+
+
+ // CREATING VARIABLES TO CREATE THE CONNECTION STRING
+            // THIS IS ON MY SERVER SO IT CAN RUN WITHOUT AN ISSUE
+            MySqlConnection connection;
+            string server;
+            string database;
+            string uid;
+            string password;
+
+            // MY SERVER DETAILS, YOU CAN STEAL THESE KINDA
+            server = "164.160.91.44"; // SERVER IP ADDRESS
+            database = "vxworkfl_DSWBooks"; // DB NAME
+            uid = "vxworkfl_DSW3A"; // USERNAME
+            password = "LuuIsAwesome@23"; // PASSWORD AND YES I AM AWESOME
+
+
+            string connectionString;
+            // BUILDING THE CONNECTION STRING
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            // CREATING A MYSQL CONNECTION TO CONDUCT OPERATIONS
+            connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Connection is open");
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Contact Lunghi The Server Could be Down or you have no internet");// NO REALLY CALL HIM :)
+            }
+
